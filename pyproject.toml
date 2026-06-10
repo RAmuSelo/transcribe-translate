@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transcribe-translate"
+version = "0.1.0"
+description = "Transcribe an audio file (auto language detection) and translate the text."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "The transcribe-translate authors" }]
+keywords = ["transcription", "translation", "whisper", "audio", "speech", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "faster-whisper",
+    "deep-translator",
+]
+
+[project.optional-dependencies]
+dev = ["build"]
+
+[project.urls]
+Homepage = "https://github.com/RAmuSelo/transcribe-translate"
+Source = "https://github.com/RAmuSelo/transcribe-translate"
+Issues = "https://github.com/RAmuSelo/transcribe-translate/issues"
+
+[project.scripts]
+transcribe-translate = "transcribe_translate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
